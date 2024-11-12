@@ -12,6 +12,8 @@ def terminal():
             diskspace()
         if terminalinput == '.exit':
             exit()
+        if terminalinput == '.installgit':
+            pass
 
 startup = input('start terminal? [Y/N] >>> ')
 if startup == 'Y':
