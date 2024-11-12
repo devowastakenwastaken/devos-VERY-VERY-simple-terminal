@@ -39,3 +39,10 @@ def diskspace():
     print("Total: %d GiB" % (total // (2**30)))
     print("Used: %d GiB" % (used // (2**30)))
     print("Free: %d GiB" % (free // (2**30)))
+
+# Objectives:
+# Add disk function ✔
+# Add echo ✔
+# Add install function
+# Add YT to MP4 downloader
+# Add system-intertwined commands (shutdown, install)
