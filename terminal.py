@@ -7,6 +7,13 @@ from tkinter import *
 from tkinter.messagebox import *
 from tkinter.filedialog import *
 
+def license():
+    licn = input('LICENSE.md should be in your folder where you installed this program. Do you have it? Y/N >>> ')
+    if licn == 'Y':
+        pass
+    if licn == 'N':
+        print('Download it from GitHub: \nhttps://github.com/devowastakenwastaken/devos-VERY-VERY-simple-terminal/blob/main/LICENSE')
+
 def notepad():
     class Notepad:
 
@@ -210,8 +217,10 @@ while True:
         pass
     elif terminalinput == '?':
         helptxt()
+    elif terminalinput == 'license':
+        license()
     elif terminalinput == 'git':
-        print('https://github.com/devowastakenwastaken/devos-simple-terminal')
+        print('https://github.com/devowastakenwastaken/devos-VERY-VERY-simple-terminal')
     else:
         print('Exception in ~terminal.py: unknown command or function entered')
 
