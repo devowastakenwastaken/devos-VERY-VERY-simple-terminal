@@ -7,13 +7,6 @@ from tkinter import *
 from tkinter.messagebox import *
 from tkinter.filedialog import *
 
-def license():
-    licn = input('LICENSE.md should be in your folder where you installed this program. Do you have it? Y/N >>> ')
-    if licn == 'Y':
-        pass
-    if licn == 'N':
-        print('Download it from GitHub: \nhttps://github.com/devowastakenwastaken/devos-VERY-VERY-simple-terminal/blob/main/LICENSE')
-
 def notepad():
     class Notepad:
 
@@ -202,7 +195,7 @@ print('Starting terminal...')
 time.sleep(0.325)
 
 while True:
-    terminalinput = input('user\\~terminal.py >>> $ ')
+    terminalinput = input('>>> ')
     if terminalinput == 'echo':
         echo()
     elif terminalinput == 'platform':
@@ -210,6 +203,8 @@ while True:
     elif terminalinput == 'disk':
         diskspace()
     elif terminalinput == 'quit':
+        print('Goodbye!')
+        time.sleep(0.25)
         exit()
     elif terminalinput == 'notepad':
         notepad()
@@ -217,10 +212,8 @@ while True:
         pass
     elif terminalinput == '?':
         helptxt()
-    elif terminalinput == 'license':
-        license()
     elif terminalinput == 'git':
-        print('https://github.com/devowastakenwastaken/devos-VERY-VERY-simple-terminal')
+        print('https://github.com/devowastakenwastaken/devos-simple-terminal')
     else:
         print('Exception in ~terminal.py: unknown command or function entered')
 
