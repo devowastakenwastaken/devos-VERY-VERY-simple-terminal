@@ -7,6 +7,37 @@ from tkinter import *
 from tkinter.messagebox import *
 from tkinter.filedialog import *
 
+
+
+# Add source code to any extensions here, if you would like to remove them all then delete everything from extensions and replace it with the 'pass' function.
+
+extensionlist = ['base.hello-world', 'base.calculator', 'base.notepad', 'base.echo', 'base.platform', 'base.diskspace', 'base.help']
+
+# Hello-world example extension, called in the terminal by using the 'hello-world' command
+def helloworld():
+    print('Hello World!')
+
+# Basic calculator function, called by running 'calc'
+def calculator():
+    calcnum1 = int(input('Value 1: '))
+    calcnum2 = int(input('Value 2: '))
+    func = input('Operation (*, /, + or -): ')
+    if func == '*':
+        print(calcnum1 * calcnum2)
+    if func == '/':
+        print(calcnum1 / calcnum2)
+    if func == '+':
+        print(calcnum1 + calcnum2)
+    if func == '-':
+        print(calcnum1 - calcnum2)
+    if calcnum1 == '0':
+        if func == '/':
+            print('Error: division by zero')
+    if calcnum2 == '0':
+        if func == '/':
+            print('Error: division by zero')
+
+# Notepad function
 def notepad():
     class Notepad:
 
@@ -168,21 +199,27 @@ def notepad():
     # Run main application
     notepad = Notepad(width=600, height=400)
     notepad.run()
+
+# Echo function
 def echo():
     echo = input('echo? >>> ')
     print(echo)
+
+# Shows platform and OS version
 def plat():
     print(f'\\terminal.py - platform.platform >>> $ {platform.platform()} \n'
           f'\\terminal.py - platform.system >>> $ {platform.system()} \n'
           f'\\terminal.py - platform.release >>> $ {platform.release()}')
+
+# Extension to show disk space in GB
 def diskspace():
     total, used, free = shutil.disk_usage("/")
 
-    print("Total: %d GiB" % (total // (2**30)))
-    print("Used: %d GiB" % (used // (2**30)))
-    print("Free: %d GiB" % (free // (2**30)))
-def guiver():
-    pass
+    print("Total space: %d GB" % (total // (2**30)))
+    print("Used space: %d GB" % (used // (2**30)))
+    print("Free space: %d GB" % (free // (2**30)))
+
+# Help text
 def helptxt():
     print('echo = asks for an input that, when filled, repeats the input in the terminal \n'
           'platform = shows the platform, OS and version that the terminal is running on \n'
@@ -190,34 +227,6 @@ def helptxt():
           'quit = quits the program \n'
           'notepad = opens a notepad app (source code by Pratyush Jain, https://github.com/pratyushjain122) \n'
           '? = shows this text')
-
-# Add source code to any extensions here, if you would like to remove them all then delete everything from extensions and replace it with the 'pass' function.
-
-extensionlist = ['base.hello-world', 'base.calculator']
-
-# Hello-world example extension, called in the terminal by using the 'hello-world' command
-def helloworld():
-    print('Hello World!')
-
-# Basic calculator function, called by running 'calc'
-def calculator():
-    calcnum1 = int(input('Value 1: '))
-    calcnum2 = int(input('Value 2: '))
-    func = input('Operation (*, /, + or -): ')
-    if func == '*':
-        print(calcnum1 * calcnum2)
-    if func == '/':
-        print(calcnum1 / calcnum2)
-    if func == '+':
-        print(calcnum1 + calcnum2)
-    if func == '-':
-        print(calcnum1 - calcnum2)
-    if calcnum1 == '0':
-        if func == '/':
-            print('Error: division by zero')
-    if calcnum2 == '0':
-        if func == '/':
-            print('Error: division by zero')
 
 # End extensions area here.
 
