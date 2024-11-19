@@ -178,9 +178,9 @@ def plat():
 def diskspace():
     total, used, free = shutil.disk_usage("/")
 
-    print("Total space: %d GB" % (total // (2**30)))
-    print("Used space: %d GB" % (used // (2**30)))
-    print("Free space: %d GB" % (free // (2**30)))
+    print("Total: %d GiB" % (total // (2**30)))
+    print("Used: %d GiB" % (used // (2**30)))
+    print("Free: %d GiB" % (free // (2**30)))
 def guiver():
     pass
 def helptxt():
@@ -191,10 +191,40 @@ def helptxt():
           'notepad = opens a notepad app (source code by Pratyush Jain, https://github.com/pratyushjain122) \n'
           '? = shows this text')
 
+# Add source code to any extensions here, if you would like to remove them all then delete everything from extensions and replace it with the 'pass' function.
+
+extensionlist = ['base.hello-world', 'base.calculator']
+
+# Hello-world example extension, called in the terminal by using the 'hello-world' command
+def helloworld():
+    print('Hello World!')
+
+# Basic calculator function, called by running 'calc'
+def calculator():
+    calcnum1 = int(input('Value 1: '))
+    calcnum2 = int(input('Value 2: '))
+    func = input('Operation (*, /, + or -): ')
+    if func == '*':
+        print(calcnum1 * calcnum2)
+    if func == '/':
+        print(calcnum1 / calcnum2)
+    if func == '+':
+        print(calcnum1 + calcnum2)
+    if func == '-':
+        print(calcnum1 - calcnum2)
+    if calcnum1 == '0':
+        if func == '/':
+            print('Error: division by zero')
+    if calcnum2 == '0':
+        if func == '/':
+            print('Error: division by zero')
+
+# End extensions area here.
+
 print('Starting terminal...')
 time.sleep(0.325)
 
-while True:
+while True:         
     terminalinput = input('>>> ')
     if terminalinput == 'echo':
         echo()
@@ -210,8 +240,14 @@ while True:
         notepad()
     elif terminalinput == 'gui':
         pass
+    elif terminalinput == 'calc':
+        calculator()
+    elif terminalinput == 'hello-world':
+        helloworld()
     elif terminalinput == '?':
         helptxt()
+    elif terminalinput == 'extensions':
+        print('Extensions:', extensionlist)
     elif terminalinput == 'git':
         print('https://github.com/devowastakenwastaken/devos-simple-terminal')
     else:
@@ -222,6 +258,6 @@ while True:
 # Objectives:
 # Add disk function ✔
 # Add echo ✔
-# Add install function
+# Add install function - Extensions are good anough howay man
 # Add YT to MP4 downloader
 # Add system-intertwined commands (shutdown, install)
