@@ -178,9 +178,9 @@ def plat():
 def diskspace():
     total, used, free = shutil.disk_usage("/")
 
-    print("Total: %d GiB" % (total // (2**30)))
-    print("Used: %d GiB" % (used // (2**30)))
-    print("Free: %d GiB" % (free // (2**30)))
+    print("Total space: %d GB" % (total // (2**30)))
+    print("Used space: %d GB" % (used // (2**30)))
+    print("Free space: %d GB" % (free // (2**30)))
 def guiver():
     pass
 def helptxt():
